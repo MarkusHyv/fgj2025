@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerCollisionTracker
 {
@@ -13,8 +14,9 @@ public class PlayerCollisionTracker
         _player = owner;
     }
 
-    private void OnBubbleBurst(BubbleType type)
+    private void OnBubbleBurst(BubbleType type, int scoreIncrease)
     {
-        _player.IncreaseScore(type);
+        Debug.Log($"Player collided with bubble of type {type} and increased score by {scoreIncrease}");
+        _player.IncreaseScore(type, scoreIncrease);
     }
 }

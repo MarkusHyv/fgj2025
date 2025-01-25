@@ -1,0 +1,5 @@
+C:/UnityRepos/fgj2025/Sodascream/.utmp/RelWithDebInfo/h6972x4z/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/UnityRepos/fgj2025/Sodascream/.utmp/RelWithDebInfo/h6972x4z/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/UnityRepos/fgj2025/Sodascream/.utmp/RelWithDebInfo/h6972x4z/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/UnityRepos/fgj2025/Sodascream/.utmp/RelWithDebInfo/h6972x4z/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/UnityRepos/fgj2025/Sodascream/.utmp/RelWithDebInfo/h6972x4z/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir

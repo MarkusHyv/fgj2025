@@ -7,8 +7,14 @@ public class Bubble : MonoBehaviour
     bool _isInitialized = false;
     private float _speed;
     private Vector3 _direction;
+    private int _scoreIncrease;
 
-    internal void Initialize(BubbleType spawnBubbleType, float speed, float sizeMultiplier, Vector3 randomDirection)
+    internal int GetScoreIncrease()
+    {
+        return _scoreIncrease;
+    }
+
+    internal void Initialize(BubbleType spawnBubbleType, float speed, float sizeMultiplier, Vector3 randomDirection, int scoreIncrease)
     {
         //scale the gameObject
         transform.localScale = new Vector3(
@@ -19,6 +25,7 @@ public class Bubble : MonoBehaviour
         _speed = speed;
         _isInitialized = true;
         _direction = randomDirection;
+        _scoreIncrease = scoreIncrease;
     }
 
     private void Update()

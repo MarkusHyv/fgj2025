@@ -41,7 +41,9 @@ public class BubbleSpawner : MonoBehaviour
         bubble.Initialize(
             spawnBubbleType,
             bubbleConfig.SpeedMultiplier * _bubbleConfigProvider.BaseBubbleSpeed,
-            randomSizeMultiplier, randomDirection
+            randomSizeMultiplier,
+            randomDirection,
+            bubbleConfig.ScoreValue
             );
 
     }
