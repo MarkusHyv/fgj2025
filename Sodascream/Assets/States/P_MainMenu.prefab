@@ -838,6 +838,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5788898552840768087}
     m_Modifications:
+    - target: {fileID: 1486802193470153025, guid: 7cb6b111d82226d498fd05028cc6f79c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1576506501240683482, guid: 7cb6b111d82226d498fd05028cc6f79c, type: 3}
       propertyPath: m_Name
       value: DuckRender
@@ -880,6 +884,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2995103572230954437, guid: 7cb6b111d82226d498fd05028cc6f79c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019792835860372085, guid: 7cb6b111d82226d498fd05028cc6f79c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687505957317197290, guid: 7cb6b111d82226d498fd05028cc6f79c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573959495651147401, guid: 7cb6b111d82226d498fd05028cc6f79c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5640739232131818383, guid: 7cb6b111d82226d498fd05028cc6f79c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159578813384329037, guid: 7cb6b111d82226d498fd05028cc6f79c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504243510915413148, guid: 7cb6b111d82226d498fd05028cc6f79c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672252082943724704, guid: 7cb6b111d82226d498fd05028cc6f79c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239806428341590220, guid: 7cb6b111d82226d498fd05028cc6f79c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165527820531485454, guid: 7cb6b111d82226d498fd05028cc6f79c, type: 3}
+      propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
