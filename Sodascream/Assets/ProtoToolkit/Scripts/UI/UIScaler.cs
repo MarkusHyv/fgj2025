@@ -4,13 +4,20 @@ using UnityEngine.UI;
 
 namespace ProtoToolkit.Scripts.UI
 {
+    [RequireComponent(typeof(CanvasScaler))]
     public class UIScaler : MonoBehaviour
     {
-        [SerializeField] private CanvasScaler _canvasScaler;
+        [SerializeField]
+        private CanvasScaler _canvasScaler;
         [SerializeField]
         private Vector2Int _currentResolution;
 
         private float _timer;
+
+        public void OnValidate()
+        {
+            _canvasScaler = GetComponent<CanvasScaler>();
+        }
     
         public void OnEnable()
         {
