@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _gyroInput = GetComponent<IGyroInputReader>();
         _useGyroInput = _gyroInput.CanProvideInput();
-        Debug.Log($"Gyro input available: {_useGyroInput}");
 
         if (!_useGyroInput)
         {
@@ -43,7 +42,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleRotate()
     {
-        transform.Rotate(Vector3.up, _turnDirection * _rotationSpeed * Time.deltaTime);
+        var rotationAmount = _turnDirection * _rotationSpeed * Time.deltaTime;
+        Debug.Log($"Rotation amount: {rotationAmount}");
+        transform.Rotate(Vector3.up, rotationAmount);
     }
 
     private void Turn(float inputValue)

@@ -6,7 +6,6 @@ public class GyroInput : MonoBehaviour, IGyroInputReader
     [SerializeField] private float _rotationSensitivityModifier = 10f;
     void Start()
     {
-
         Input.gyro.enabled = _useGyroInput;
     }
 
@@ -27,7 +26,7 @@ public class GyroInput : MonoBehaviour, IGyroInputReader
 
     public float GetGyroTurnDirection()
     {
-        float rotationRateZ = Mathf.Clamp(Input.gyro.rotationRateUnbiased.z, -1f, 1f) * _rotationSensitivityModifier * -1f;
+        float rotationRateZ = Mathf.Clamp(Input.gyro.rotationRateUnbiased.z, -1f, 1f) * -1f * _rotationSensitivityModifier;
         return rotationRateZ;
     }
 }
