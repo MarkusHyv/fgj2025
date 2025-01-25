@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a54b5e989c2e7494c80a2b88afcbc291, type: 3}
   m_Name: BubbleConfig
   m_EditorClassIdentifier: 
+  BaseBubblePrefab: {fileID: 67466218490067987, guid: 4a28351f19dcdc24a840b64e3bd8af04, type: 3}
   BaseBubbleSpeed: 0.5
   BubbleLifeTimeInSeconds: 10
   BubbleConfigs:
   - BubbleType: 0
-    BubblePrefab: {fileID: 67466218490067987, guid: 4a28351f19dcdc24a840b64e3bd8af04, type: 3}
     ScoreValue: 1
     BubbleLifeIncrease: 0
     BubbleLifeDecrease: -1
@@ -25,7 +25,6 @@ MonoBehaviour:
     SizeMultiplier: 2
     SizeRandomVariance: 0.5
   - BubbleType: 1
-    BubblePrefab: {fileID: 67466218490067987, guid: 4a64c423effe2314abbb0723a5cf5ab2, type: 3}
     ScoreValue: -1
     BubbleLifeIncrease: 0
     BubbleLifeDecrease: -1

@@ -1,5 +1,6 @@
 public enum BubbleType
 {
     Default,
-    EvilBubble
+    EvilBubble,
+    PlusHealthBubble
 }

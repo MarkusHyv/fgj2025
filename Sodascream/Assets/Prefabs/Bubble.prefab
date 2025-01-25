@@ -153,6 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BubbleType: 0
+  _bubbleVisualsProvider: {fileID: 11400000, guid: bb074e0fd39e8164397d1c501d021683, type: 2}
+  _faceRenderer: {fileID: 4366408971467671256}
+  _baseRenderer: {fileID: 6867882503111552179}
 --- !u!1 &1897800274010778126
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +169,7 @@ GameObject:
   - component: {fileID: 4366408971467671256}
   - component: {fileID: 3677789215604405534}
   m_Layer: 7
-  m_Name: Quad (1)
+  m_Name: FaceQuad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,7 +278,7 @@ GameObject:
   - component: {fileID: 214805898855825583}
   - component: {fileID: 5256244039619581914}
   m_Layer: 7
-  m_Name: Quad (2)
+  m_Name: ShineQuad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,7 +387,7 @@ GameObject:
   - component: {fileID: 6867882503111552179}
   - component: {fileID: 2361346715749855083}
   m_Layer: 7
-  m_Name: Quad
+  m_Name: BaseQuad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

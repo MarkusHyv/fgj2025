@@ -7,7 +7,6 @@ using UnityEngine;
 public class BubbleConfig
 {
     public BubbleType BubbleType;
-    public Bubble BubblePrefab;
     public int ScoreValue;
     [Tooltip("The amount of health the player gains when they burst this bubble")]
     public int BubbleLifeIncrease;
@@ -24,6 +23,7 @@ public class BubbleConfig
 [CreateAssetMenu(fileName = "BubbleConfig", menuName = "SodaScream/BubbleConfigScriptableObject")]
 public class BubbleConfigScriptableObject : ScriptableObject, IBubbleConfigProvider
 {
+    public Bubble BaseBubblePrefab;
     public float BaseBubbleSpeed;
     public float BubbleLifeTimeInSeconds;
     public BubbleConfig[] BubbleConfigs;
