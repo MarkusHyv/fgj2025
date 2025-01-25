@@ -8,6 +8,13 @@ namespace ProtoToolkit.Scripts.UI.Common
         [SerializeField] public Sprite _enabledSprite;
         [SerializeField] public Sprite _disabledSprite;
         [SerializeField] public Image _image;
+
+        public void OnValidate()
+        {
+            _image = GetComponent<Image>();
+            if (_image == null) return;
+            _image.sprite = _enabledSprite;
+        }
         
         public bool Enabled { get; private set; }
         public void SetEnabled(bool value)
