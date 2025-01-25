@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a54b5e989c2e7494c80a2b88afcbc291, type: 3}
+  m_Name: BubbleConfig
+  m_EditorClassIdentifier: 
+  BaseBubbleSpeed: 0.5
+  BubbleConfigs:
+  - BubbleType: 0
+    BubblePrefab: {fileID: 67466218490067987, guid: 4a28351f19dcdc24a840b64e3bd8af04, type: 3}
+    ScoreValue: 1
+    SpeedMultiplier: 2
+    SpeedRandomVariance: 0.5
+    SizeMultiplier: 2
+    SizeRandomVariance: 0.5

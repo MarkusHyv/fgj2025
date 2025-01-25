@@ -4,7 +4,7 @@ public class GyroCameraController : MonoBehaviour
 {
     private PlayerMovement _playerMovement;
     [SerializeField] private float _cameraYOffset = 20f;
-    [SerializeField] private float _rotationSmoothingSpeed = 5f; // Adjustable smoothing speed
+    //[SerializeField] private float _rotationSmoothingSpeed = 5f; // Adjustable smoothing speed
     private bool _adjustForGyro = false;
 
     private void Start()

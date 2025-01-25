@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _gyroInput = GetComponent<IGyroInputReader>();
-        _useGyroInput = _gyroInput.CanProvideInput();
+        _useGyroInput = _gyroInput != null && _gyroInput.CanProvideInput();
 
         if (!_useGyroInput)
         {
