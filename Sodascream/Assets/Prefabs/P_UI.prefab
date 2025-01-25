@@ -185,6 +185,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 1653112090673812935, guid: 7d841829ff924d247aaa95624a427020, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151204250926804723, guid: 7d841829ff924d247aaa95624a427020, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3566711430890408300, guid: 7d841829ff924d247aaa95624a427020, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482227054245631753, guid: 7d841829ff924d247aaa95624a427020, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695233453440158223, guid: 7d841829ff924d247aaa95624a427020, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5788898552840768087, guid: 7d841829ff924d247aaa95624a427020, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -263,6 +283,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5788898552840768087, guid: 7d841829ff924d247aaa95624a427020, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6280302993917146059, guid: 7d841829ff924d247aaa95624a427020, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345731323667922970, guid: 7d841829ff924d247aaa95624a427020, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830764283328198694, guid: 7d841829ff924d247aaa95624a427020, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362210635732003914, guid: 7d841829ff924d247aaa95624a427020, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8287448281241501576, guid: 7d841829ff924d247aaa95624a427020, type: 3}
+      propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
