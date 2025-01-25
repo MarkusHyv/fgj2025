@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BubbleSpawner : MonoBehaviour
@@ -8,6 +9,7 @@ public class BubbleSpawner : MonoBehaviour
     [SerializeField] private float _spawnInterval;
     [SerializeField] private float _maximumSpawnDistanceFromPlayer;
     [SerializeField] private float _minimumSpawnDistanceFromPlayer;
+    [SerializeField] private List<BubbleType> _spawnsBubbleTypes;
     private Player _player;
     private void Start()
     {
@@ -31,8 +33,8 @@ public class BubbleSpawner : MonoBehaviour
             _player.transform.position.y,
             _player.transform.position.z + UnityEngine.Random.Range(_minimumSpawnDistanceFromPlayer, _maximumSpawnDistanceFromPlayer)
         );
-        int spawnBubbleTypeIndex = UnityEngine.Random.Range(0, Enum.GetValues(typeof(BubbleType)).Length);
-        BubbleType spawnBubbleType = (BubbleType)spawnBubbleTypeIndex;
+        int spawnBubbleTypeIndex = UnityEngine.Random.Range(0, _spawnsBubbleTypes.Count);
+        BubbleType spawnBubbleType = _spawnsBubbleTypes[spawnBubbleTypeIndex];
         var bubbleConfig = _bubbleConfigProvider.GetBubbleConfig(spawnBubbleType);
         Bubble bubble = Instantiate<Bubble>(bubbleConfig.BubblePrefab, randomPositionFromPlayer, Quaternion.identity);
         var randomSizeMultiplier = UnityEngine.Random.Range(bubbleConfig.SizeMultiplier - bubbleConfig.SizeRandomVariance, bubbleConfig.SizeMultiplier);

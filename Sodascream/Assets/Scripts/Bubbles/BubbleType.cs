@@ -1,4 +1,5 @@
 public enum BubbleType
 {
-    Default
+    Default,
+    EvilBubble
 }

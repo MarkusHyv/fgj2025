@@ -21,3 +21,10 @@ MonoBehaviour:
     SpeedRandomVariance: 0.5
     SizeMultiplier: 2
     SizeRandomVariance: 0.5
+  - BubbleType: 1
+    BubblePrefab: {fileID: 67466218490067987, guid: 4a28351f19dcdc24a840b64e3bd8af04, type: 3}
+    ScoreValue: 1
+    SpeedMultiplier: 2
+    SpeedRandomVariance: 0.5
+    SizeMultiplier: 2
+    SizeRandomVariance: 0.5
