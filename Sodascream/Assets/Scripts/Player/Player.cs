@@ -41,7 +41,6 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent(out Bubble bubble))
         {
-            Debug.Log("Player health getting decreased by: " + bubble.GetLifeDecrease());
             IncreaseHealth(bubble.GetLifeDecrease());
             Destroy(other.gameObject);
         }
