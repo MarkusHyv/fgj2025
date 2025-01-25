@@ -1,16 +1,13 @@
-// Create a cube with camera vector names on the faces.
-// Allow the device to show named faces as it is oriented.
-
-using System;
 using UnityEngine;
 
 public class GyroInput : MonoBehaviour, IGyroInputReader
 {
+    [SerializeField] private bool _useGyroInput;
     [SerializeField] private float _rotationSensitivityModifier = 10f;
-    private Quaternion _resetValue;
     void Start()
     {
-        Input.gyro.enabled = true;
+
+        Input.gyro.enabled = _useGyroInput;
     }
 
     protected void OnGUI()
@@ -25,7 +22,7 @@ public class GyroInput : MonoBehaviour, IGyroInputReader
 
     public bool CanProvideInput()
     {
-        return Input.gyro != null;
+        return Input.gyro != null && _useGyroInput;
     }
 
     public float GetGyroTurnDirection()

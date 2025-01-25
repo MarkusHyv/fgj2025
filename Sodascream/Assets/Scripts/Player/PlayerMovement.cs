@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _gyroInput = GetComponent<IGyroInputReader>();
         _useGyroInput = _gyroInput.CanProvideInput();
+        Debug.Log($"Gyro input available: {_useGyroInput}");
 
         if (!_useGyroInput)
         {
@@ -55,4 +56,5 @@ public class PlayerMovement : MonoBehaviour
         return transform.rotation.eulerAngles.y;
     }
 
+    internal bool IsUsingGyroInput() => _useGyroInput;
 }

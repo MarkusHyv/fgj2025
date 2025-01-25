@@ -5,10 +5,12 @@ public class GyroCameraController : MonoBehaviour
     private PlayerMovement _playerMovement;
     [SerializeField] private float _cameraYOffset = 20f;
     [SerializeField] private float _rotationSmoothingSpeed = 5f; // Adjustable smoothing speed
+    private bool _adjustForGyro = false;
 
     private void Start()
     {
         _playerMovement = FindFirstObjectByType<PlayerMovement>();
+        _adjustForGyro = _playerMovement.IsUsingGyroInput();
     }
     private void Update()
     {
@@ -23,14 +25,18 @@ public class GyroCameraController : MonoBehaviour
             _playerMovement.transform.position.z
         );
 
-        float playerYRotation = _playerMovement.transform.eulerAngles.y;
+        /*         if (!_adjustForGyro)
+                {
+                    float playerYRotation = _playerMovement.transform.eulerAngles.y;
 
-        Quaternion targetRotation = Quaternion.Euler(90f, 0f, -playerYRotation);
+                    Quaternion targetRotation = Quaternion.Euler(90f, 0f, -playerYRotation);
 
-        this.transform.rotation = Quaternion.Slerp(
-            this.transform.rotation,
-            targetRotation,
-            Time.deltaTime * _rotationSmoothingSpeed
-        );
+                    this.transform.rotation = Quaternion.Slerp(
+                        this.transform.rotation,
+                        targetRotation,
+                        Time.deltaTime * _rotationSmoothingSpeed
+                    );
+                } */
+
     }
 }
