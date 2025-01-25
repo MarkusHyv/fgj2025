@@ -5,11 +5,12 @@ using UnityEngine.InputSystem;
 public class InputReader : MonoBehaviour, PlayerControls.IGameplayActions, IInputReader
 {
     public event Action<float> OnTurnInput;
+    PlayerControls _playerControls;
     void Start()
     {
-        PlayerControls playerControls = new PlayerControls();
-        playerControls.Gameplay.SetCallbacks(this);
-        playerControls.Gameplay.Enable();
+        _playerControls = new PlayerControls();
+        _playerControls.Gameplay.SetCallbacks(this);
+        _playerControls.Gameplay.Enable();
     }
 
     public void OnTurn(InputAction.CallbackContext context)
@@ -18,5 +19,10 @@ public class InputReader : MonoBehaviour, PlayerControls.IGameplayActions, IInpu
         {
             OnTurnInput?.Invoke(context.ReadValue<float>());
         }
+    }
+
+    private void OnDisable()
+    {
+        _playerControls.Gameplay.Disable();
     }
 }

@@ -5,20 +5,32 @@ using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private IInputReader _inputReader;
+    private IInputReader _inputReader;
+    private IGyroInputReader _gyroInput;
     [SerializeField] private float _rotationSpeed = 1f;
     [SerializeField] private float _speed = 5f;
+    private bool _useGyroInput;
 
     private float _turnDirection;
 
     private void Start()
     {
-        _inputReader = GetComponent<IInputReader>();
-        _inputReader.OnTurnInput += Turn;
+        _gyroInput = GetComponent<IGyroInputReader>();
+        _useGyroInput = _gyroInput.CanProvideInput();
+
+        if (!_useGyroInput)
+        {
+            _inputReader = GetComponent<IInputReader>();
+            _inputReader.OnTurnInput += Turn;
+        }
     }
 
     private void Update()
     {
+        if (_useGyroInput)
+        {
+            _turnDirection = _gyroInput.GetGyroTurnDirection();
+        }
         HandleMove();
         HandleRotate();
     }
@@ -37,4 +49,10 @@ public class PlayerMovement : MonoBehaviour
     {
         _turnDirection = inputValue;
     }
+
+    public float GetCurrentYRotation()
+    {
+        return transform.rotation.eulerAngles.y;
+    }
+
 }

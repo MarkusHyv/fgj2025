@@ -245,7 +245,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 718242813263649613}
   - component: {fileID: 1097718919351785007}
   - component: {fileID: 6675970366774873272}
+  - component: {fileID: 4512891183836632050}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -309,8 +310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1077c93dad700464cb45e9416976dd4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 30
-  _speed: 1
+  _rotationSpeed: 20
+  _speed: 3
 --- !u!114 &1097718919351785007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,3 +337,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bubbleBurster: {fileID: 2438018242232686457}
+--- !u!114 &4512891183836632050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7884943307565854644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dba2d5ed556bb0e469e9593a53b4013e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSensitivityModifier: 10
