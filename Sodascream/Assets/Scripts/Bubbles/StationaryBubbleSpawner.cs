@@ -25,7 +25,6 @@ public class StationaryBubbleSpawner : MonoBehaviour
     {
         while (true)
         {
-            UnityEngine.Debug.Log("Spawning bubble, spawn interval is now: " + _currentSpawnInterval);
             SpawnRandomBubble();
             yield return new WaitForSeconds(_currentSpawnInterval);
         }
