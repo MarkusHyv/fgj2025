@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c8b02a08fd6d84e923e80b00991de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BubbleType: 0
   _bubbleVisualsProvider: {fileID: 11400000, guid: bb074e0fd39e8164397d1c501d021683, type: 2}
   _faceRenderer: {fileID: 4366408971467671256}
   _baseRenderer: {fileID: 6867882503111552179}
@@ -167,7 +166,6 @@ GameObject:
   - component: {fileID: 7962493992068119620}
   - component: {fileID: 7719758467401321820}
   - component: {fileID: 4366408971467671256}
-  - component: {fileID: 3677789215604405534}
   m_Layer: 7
   m_Name: FaceQuad
   m_TagString: Untagged
@@ -184,7 +182,7 @@ Transform:
   m_GameObject: {fileID: 1897800274010778126}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.097, z: 0}
+  m_LocalPosition: {x: 0, y: 0.043, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -243,28 +241,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3677789215604405534
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897800274010778126}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2017074068891060602
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +252,6 @@ GameObject:
   - component: {fileID: 6135377450814378219}
   - component: {fileID: 369220883661228335}
   - component: {fileID: 214805898855825583}
-  - component: {fileID: 5256244039619581914}
   m_Layer: 7
   m_Name: ShineQuad
   m_TagString: Untagged
@@ -293,7 +268,7 @@ Transform:
   m_GameObject: {fileID: 2017074068891060602}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.18, z: 0}
+  m_LocalPosition: {x: 0, y: 0.079, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -352,28 +327,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5256244039619581914
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017074068891060602}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8610679669363047407
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +338,6 @@ GameObject:
   - component: {fileID: 6693247406860382708}
   - component: {fileID: 5943034640492248999}
   - component: {fileID: 6867882503111552179}
-  - component: {fileID: 2361346715749855083}
   m_Layer: 7
   m_Name: BaseQuad
   m_TagString: Untagged
@@ -461,25 +413,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2361346715749855083
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8610679669363047407}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
