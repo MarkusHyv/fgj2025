@@ -1,10 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputReader : MonoBehaviour, PlayerControls.IGameplayActions
+public class InputReader : MonoBehaviour, PlayerControls.IGameplayActions, IInputReader
 {
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public event Action<float> OnTurnInput;
     void Start()
     {
         PlayerControls playerControls = new PlayerControls();
@@ -12,16 +12,11 @@ public class InputReader : MonoBehaviour, PlayerControls.IGameplayActions
         playerControls.Gameplay.Enable();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void OnTurn(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-
+            OnTurnInput?.Invoke(context.ReadValue<float>());
         }
     }
 }
