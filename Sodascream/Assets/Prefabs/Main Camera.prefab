@@ -183,6 +183,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c20f39a3adef6d4aa651a6306a53383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerMovement: {fileID: 0}
-  _cameraYOffset: 20
-  _rotationSmoothingSpeed: 5
+  _cameraYOffset: 10
