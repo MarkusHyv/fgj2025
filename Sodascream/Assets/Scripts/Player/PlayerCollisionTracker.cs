@@ -1,26 +1,20 @@
 using System;
 using UnityEngine;
 
-public class PlayerCollisionTracker : MonoBehaviour
+public class PlayerCollisionTracker
 {
-    [SerializeField] private BubbleBurster _bubbleBurster;
+    private BubbleBurster _bubbleBurster;
+    private Player _player;
 
-    private void Start()
+    public PlayerCollisionTracker(BubbleBurster bubbleBurster, Player owner)
     {
-        if (_bubbleBurster == null)
-        {
-            throw new System.Exception($"BubbleBurster not found in {transform.name}");
-        }
+        _bubbleBurster = bubbleBurster;
         _bubbleBurster.OnBubbleBurst += OnBubbleBurst;
+        _player = owner;
     }
 
     private void OnBubbleBurst(BubbleType type)
     {
-        Debug.Log("Player has burst a bubble of type: " + type);
-    }
-
-    private void OnDestroy()
-    {
-        _bubbleBurster.OnBubbleBurst -= OnBubbleBurst;
+        _player.IncreaseScore(type);
     }
 }

@@ -7,7 +7,6 @@ public class BubbleBurster : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        UnityEngine.Debug.Log("Collision detected");
         if (other.gameObject.TryGetComponent(out Bubble bubble))
         {
             OnBubbleBurst?.Invoke(bubble.BubbleType);
