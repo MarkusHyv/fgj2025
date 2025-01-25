@@ -41,12 +41,14 @@ public class BubbleSpawner : MonoBehaviour
         Vector3 randomDirection = new Vector3(UnityEngine.Random.Range(-1f, 1f), 0f, UnityEngine.Random.Range(-1f, 1f)).normalized;
 
         bubble.Initialize(
-            spawnBubbleType,
-            bubbleConfig.SpeedMultiplier * _bubbleConfigProvider.BaseBubbleSpeed,
-            randomSizeMultiplier,
-            randomDirection,
-            bubbleConfig.ScoreValue,
-            _bubbleConfigProvider.BubbleLifeTimeInSeconds
+            spawnBubbleType: spawnBubbleType,
+            speed: bubbleConfig.SpeedMultiplier * _bubbleConfigProvider.BaseBubbleSpeed,
+            sizeMultiplier: randomSizeMultiplier,
+            randomDirection: randomDirection,
+            scoreIncrease: bubbleConfig.ScoreValue,
+            bubbleLifeTimeInSeconds: _bubbleConfigProvider.BubbleLifeTimeInSeconds,
+            lifeIncreaseOnBurst: bubbleConfig.BubbleLifeIncrease,
+            lifeDecreaseOnHit: bubbleConfig.BubbleLifeDecrease
             );
 
     }

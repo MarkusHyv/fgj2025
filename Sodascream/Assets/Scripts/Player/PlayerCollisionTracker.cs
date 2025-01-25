@@ -14,9 +14,9 @@ public class PlayerCollisionTracker
         _player = owner;
     }
 
-    private void OnBubbleBurst(BubbleType type, int scoreIncrease)
+    private void OnBubbleBurst(BubbleType type, int scoreIncrease, int healthIncrease)
     {
-        Debug.Log($"Player collided with bubble of type {type} and increased score by {scoreIncrease}");
         _player.IncreaseScore(type, scoreIncrease);
+        _player.IncreaseHealth(healthIncrease);
     }
 }

@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class BubbleBurster : MonoBehaviour
 {
-    public Action<BubbleType, int> OnBubbleBurst;
+    public Action<BubbleType, int, int> OnBubbleBurst;
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.TryGetComponent(out Bubble bubble))
         {
-            OnBubbleBurst?.Invoke(bubble.BubbleType, bubble.GetScoreIncrease());
+            OnBubbleBurst?.Invoke(bubble.BubbleType, bubble.GetScoreIncrease(), bubble.GetLifeIncrease());
             Destroy(other.gameObject);
         }
     }

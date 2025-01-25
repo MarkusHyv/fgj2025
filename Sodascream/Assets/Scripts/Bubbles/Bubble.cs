@@ -10,25 +10,38 @@ public class Bubble : MonoBehaviour
     private int _scoreIncrease;
     private float _elapsedLifeTime = 0f;
     private float _lifeTimeMax;
+    private int _lifeIncreaseOnBurst;
+    private int _lifeDecreaseOnHit;
+
+    internal int GetLifeIncrease()
+    {
+        return _lifeIncreaseOnBurst;
+    }
+
+    public int GetLifeDecrease()
+    {
+        return _lifeDecreaseOnHit;
+    }
 
     internal int GetScoreIncrease()
     {
         return _scoreIncrease;
     }
 
-    internal void Initialize(BubbleType spawnBubbleType, float speed, float sizeMultiplier, Vector3 randomDirection, int scoreIncrease, float bubbleLifeTimeInSeconds)
+    internal void Initialize(BubbleType spawnBubbleType, float speed, float sizeMultiplier, Vector3 randomDirection, int scoreIncrease, float bubbleLifeTimeInSeconds, int lifeIncreaseOnBurst, int lifeDecreaseOnHit)
     {
-        //scale the gameObject
         transform.localScale = new Vector3(
-            transform.localScale.x * sizeMultiplier,
-            transform.localScale.y * sizeMultiplier,
-            transform.localScale.z * sizeMultiplier
-            );
+     transform.localScale.x * sizeMultiplier,
+     transform.localScale.y * sizeMultiplier,
+     transform.localScale.z * sizeMultiplier
+     );
         _speed = speed;
         _isInitialized = true;
         _direction = randomDirection;
         _scoreIncrease = scoreIncrease;
         _lifeTimeMax = bubbleLifeTimeInSeconds;
+        _lifeIncreaseOnBurst = lifeIncreaseOnBurst;
+        _lifeDecreaseOnHit = lifeDecreaseOnHit;
     }
 
     private void Update()
