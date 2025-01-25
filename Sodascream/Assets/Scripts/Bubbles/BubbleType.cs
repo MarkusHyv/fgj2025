@@ -1,0 +1,4 @@
+public enum BubbleType
+{
+    Default
+}
