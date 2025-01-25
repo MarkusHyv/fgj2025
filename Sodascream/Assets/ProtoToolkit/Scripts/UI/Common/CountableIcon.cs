@@ -10,10 +10,10 @@ namespace ProtoToolkit.Scripts.UI.Common
         [SerializeField] public Image _image;
         
         public bool Enabled { get; private set; }
-        public void SetEnabled(bool enabled)
+        public void SetEnabled(bool value)
         {
-            Enabled = enabled;
-            _image.sprite = enabled ? _enabledSprite : _disabledSprite;
+            Enabled = value;
+            _image.sprite = value ? _enabledSprite : _disabledSprite;
         }
     }
 }
