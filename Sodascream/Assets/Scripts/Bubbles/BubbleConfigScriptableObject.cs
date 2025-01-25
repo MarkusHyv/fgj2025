@@ -20,6 +20,7 @@ public class BubbleConfig
 public class BubbleConfigScriptableObject : ScriptableObject, IBubbleConfigProvider
 {
     public float BaseBubbleSpeed;
+    public float BubbleLifeTimeInSeconds;
     public BubbleConfig[] BubbleConfigs;
 
     public BubbleConfig GetBubbleConfig(BubbleType forType)

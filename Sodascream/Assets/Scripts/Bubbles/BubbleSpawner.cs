@@ -45,7 +45,8 @@ public class BubbleSpawner : MonoBehaviour
             bubbleConfig.SpeedMultiplier * _bubbleConfigProvider.BaseBubbleSpeed,
             randomSizeMultiplier,
             randomDirection,
-            bubbleConfig.ScoreValue
+            bubbleConfig.ScoreValue,
+            _bubbleConfigProvider.BubbleLifeTimeInSeconds
             );
 
     }
