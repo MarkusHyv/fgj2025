@@ -8,13 +8,15 @@ public class Bubble : MonoBehaviour
     private float _speed;
     private Vector3 _direction;
     private int _scoreIncrease;
+    private float _elapsedLifeTime = 0f;
+    private float _lifeTimeMax;
 
     internal int GetScoreIncrease()
     {
         return _scoreIncrease;
     }
 
-    internal void Initialize(BubbleType spawnBubbleType, float speed, float sizeMultiplier, Vector3 randomDirection, int scoreIncrease)
+    internal void Initialize(BubbleType spawnBubbleType, float speed, float sizeMultiplier, Vector3 randomDirection, int scoreIncrease, float bubbleLifeTimeInSeconds)
     {
         //scale the gameObject
         transform.localScale = new Vector3(
@@ -26,6 +28,7 @@ public class Bubble : MonoBehaviour
         _isInitialized = true;
         _direction = randomDirection;
         _scoreIncrease = scoreIncrease;
+        _lifeTimeMax = bubbleLifeTimeInSeconds;
     }
 
     private void Update()
@@ -34,6 +37,11 @@ public class Bubble : MonoBehaviour
         {
             var targetPosition = transform.position + _direction * _speed * Time.deltaTime;
             transform.position = targetPosition;
+            _elapsedLifeTime += Time.deltaTime;
+            if (_elapsedLifeTime > _lifeTimeMax)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
