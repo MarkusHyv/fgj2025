@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
     private void HandleRotate()
     {
         var rotationAmount = _turnDirection * _rotationSpeed * Time.deltaTime;
-        Debug.Log($"Rotation amount: {rotationAmount}");
         transform.Rotate(Vector3.up, rotationAmount);
     }
 

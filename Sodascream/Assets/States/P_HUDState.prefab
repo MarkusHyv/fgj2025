@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 5222286893353906475}
   - component: {fileID: 6643345136156637153}
   - component: {fileID: 6785177894627314955}
+  - component: {fileID: 6613123416714808952}
   m_Layer: 0
   m_Name: Btn_MoveLeft
   m_TagString: Untagged
@@ -513,6 +514,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6613123416714808952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775109242509423369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Keyboard>/a
 --- !u!1 &6294058734542945880
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,6 +827,7 @@ GameObject:
   - component: {fileID: 6735127734189495588}
   - component: {fileID: 7097374777013283760}
   - component: {fileID: 4295524014413468771}
+  - component: {fileID: 4922090933596824657}
   m_Layer: 0
   m_Name: Btn_MoveRight
   m_TagString: Untagged
@@ -921,6 +936,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4922090933596824657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497598539068280939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Keyboard>/d
 --- !u!1001 &170619866807019676
 PrefabInstance:
   m_ObjectHideFlags: 0
