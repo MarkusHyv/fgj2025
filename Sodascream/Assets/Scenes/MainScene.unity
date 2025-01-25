@@ -464,7 +464,7 @@ PrefabInstance:
     - target: {fileID: 2519262125916725323, guid: e1811202dc9ae554983857eed28f9332, type: 3}
       propertyPath: _startState
       value: 
-      objectReference: {fileID: 11400000, guid: df07dd50ddaf50b479b01837c7ecaf3a, type: 2}
+      objectReference: {fileID: 11400000, guid: 90a8bed12f5bc12489b4ec61357cf62a, type: 2}
     - target: {fileID: 3440046558014524132, guid: e1811202dc9ae554983857eed28f9332, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -12,12 +12,25 @@ public class DuckRandomizer : MonoBehaviour
 
     public void OnValidate()
     {
-        _animator = GetComponent<Animator>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     public void OnEnable()
     {
         _animator.runtimeAnimatorController = _ducks[Random.Range(0, _ducks.Count - 1)];
+    }
+
+    [SerializeField]
+    private float previousTime;
+    public void LateUpdate()
+    {
+        var state = _animator.GetCurrentAnimatorStateInfo(0);
+        var normalizedTime = Mathf.Repeat(state.normalizedTime, 1);
+        if (previousTime > normalizedTime)
+        {
+            _animator.gameObject.transform.localPosition = Vector3.zero;
+        }
+        previousTime = normalizedTime;
     }
 
     public void SetLayerRecursively(Transform t, int layer)
