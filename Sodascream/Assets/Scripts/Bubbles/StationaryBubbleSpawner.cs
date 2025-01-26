@@ -42,7 +42,7 @@ public class StationaryBubbleSpawner : MonoBehaviour
             UnityEngine.Random.Range(-_maximumSpawnDistanceFromOrigin, _maximumSpawnDistanceFromOrigin)
         );
 
-        Bubble bubble = Instantiate<Bubble>(_bubbleConfigProvider.GetBubbleConfig(spawnBubbleType).Prefab, randomPosition, Quaternion.identity);
+        Bubble bubble = Instantiate<Bubble>(_bubbleConfigProvider.GetBubbleConfig(spawnBubbleType).Prefab, this.transform.position + randomPosition, Quaternion.identity);
         var randomSizeMultiplier = UnityEngine.Random.Range(bubbleConfig.SizeMultiplier - bubbleConfig.SizeRandomVariance, bubbleConfig.SizeMultiplier);
         Vector3 randomDirection = new Vector3(UnityEngine.Random.Range(-1f, 1f), 0f, UnityEngine.Random.Range(-1f, 1f)).normalized;
 
