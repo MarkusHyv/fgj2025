@@ -255,6 +255,18 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2905026524877949835, guid: 6d54f889ff393fa4bacb6eb0a1f9a016, type: 3}
+      propertyPath: m_text
+      value: Quackless!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905026524877949835, guid: 6d54f889ff393fa4bacb6eb0a1f9a016, type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905026524877949835, guid: 6d54f889ff393fa4bacb6eb0a1f9a016, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3435004624465695127, guid: 6d54f889ff393fa4bacb6eb0a1f9a016, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -282,6 +294,10 @@ PrefabInstance:
     - target: {fileID: 3588441557219774358, guid: 6d54f889ff393fa4bacb6eb0a1f9a016, type: 3}
       propertyPath: m_SortingLayer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677209574177698312, guid: 6d54f889ff393fa4bacb6eb0a1f9a016, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4109577103131522327, guid: 6d54f889ff393fa4bacb6eb0a1f9a016, type: 3}
       propertyPath: m_Pivot.x
