@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Bubble : MonoBehaviour
@@ -12,9 +11,20 @@ public class Bubble : MonoBehaviour
     private float _lifeTimeMax;
     private int _lifeIncreaseOnBurst;
     private int _lifeDecreaseOnHit;
+
     [SerializeField] private BubbleVisualsScriptableObject _bubbleVisualsProvider;
-    [SerializeField] private MeshRenderer _faceRenderer;
-    [SerializeField] private MeshRenderer _baseRenderer;
+    [SerializeField] private SpriteRenderer _baseRenderer;
+    [SerializeField] private SpriteRenderer _faceRenderer;
+    [SerializeField] private SpriteRenderer _shineRenderer;
+    [SerializeField] private SpriteRenderer _accessoryRenderer;
+
+    private static bool _resourcesLoaded = false;
+    private const string _faceResourcesPath = "BubbleFaces";
+    private const string _accessoryResourcesPath = "BubbleAccessories";
+
+    private static Sprite[] _faceSprites;
+    private static Sprite[] _accessorySprites;
+
 
     internal int GetLifeIncrease()
     {
@@ -46,22 +56,48 @@ public class Bubble : MonoBehaviour
         _lifeTimeMax = bubbleLifeTimeInSeconds;
         _lifeIncreaseOnBurst = lifeIncreaseOnBurst;
         _lifeDecreaseOnHit = lifeDecreaseOnHit;
+
         SetVisuals(spawnBubbleType);
+    }
+
+    private void LoadResources()
+    {
+        if(_resourcesLoaded) return;
+
+        _faceSprites = Resources.LoadAll<Sprite>(_faceResourcesPath);
+        _accessorySprites = Resources.LoadAll<Sprite>(_accessoryResourcesPath);
+        _resourcesLoaded = true;
     }
 
     private void SetVisuals(BubbleType spawnBubbleType)
     {
-        var tempFaceMaterial = new Material(_faceRenderer.material);
-        var tempBaseMaterial = new Material(_bubbleVisualsProvider.GetBubbleVisuals(spawnBubbleType).BaseMaterialForType);
-        var visualsConfig = _bubbleVisualsProvider.GetBubbleVisuals(spawnBubbleType);
-        var faceSprite = visualsConfig.FaceSprites[UnityEngine.Random.Range(0, visualsConfig.FaceSprites.Length)];
-        var baseSprite = visualsConfig.BaseSprites[UnityEngine.Random.Range(0, visualsConfig.BaseSprites.Length)];
-        //        var accessorySprite = visualsConfig.AccessorySprites[UnityEngine.Random.Range(0, visualsConfig.AccessorySprites.Length)];
-        tempFaceMaterial.mainTexture = faceSprite.texture;
-        tempBaseMaterial.mainTexture = baseSprite.texture;
-        _faceRenderer.material = tempFaceMaterial;
-        _baseRenderer.material = tempBaseMaterial;
-        //TODO use accessory sprite too
+        LoadResources();
+
+        if (spawnBubbleType == BubbleType.PlusHealthBubble)
+            return;
+
+        _faceRenderer.sprite = _faceSprites[UnityEngine.Random.Range(0, _faceSprites.Length)];
+        _accessoryRenderer.sprite = _accessorySprites[UnityEngine.Random.Range(0, _accessorySprites.Length)];
+
+        RandomizeColor();
+
+        if (spawnBubbleType == BubbleType.EvilBubble)
+            SetEvilVisuals();
+    }
+
+    private void SetEvilVisuals()
+    {
+        _baseRenderer.sprite = _bubbleVisualsProvider.GetBubbleVisuals(BubbleType.EvilBubble).BaseSprites[0];
+    }
+
+    private void RandomizeColor()
+    {
+        var color = Random.ColorHSV(
+            0f, 1f, 
+            0.15f, 0.3f,
+            0.7f, 1f);
+        _baseRenderer.color = color;
+        _shineRenderer.color = new(color.r, color.g, color.b, _shineRenderer.color.a);
     }
 
     private void Update()
