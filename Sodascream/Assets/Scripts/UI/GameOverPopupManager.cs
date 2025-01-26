@@ -19,6 +19,7 @@ public class GameOverPopupManager : MonoBehaviour
 
     public void OnRestartButtonClicked()
     {
+        Time.timeScale = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }

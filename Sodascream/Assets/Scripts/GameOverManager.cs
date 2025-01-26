@@ -17,6 +17,7 @@ public class GameOverManager : MonoBehaviour
 
     private void OnGameOver(int arg0)
     {
+        Time.timeScale = 0;
         _gameOverPopup.Initialize(arg0);
         _gameOverPopup.RequestTransitionFromHudState(_gameOverState.Definition);
     }
