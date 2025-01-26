@@ -23,6 +23,6 @@ public class InputReader : MonoBehaviour, PlayerControls.IGameplayActions, IInpu
 
     private void OnDisable()
     {
-        _playerControls.Gameplay.Disable();
+        _playerControls?.Gameplay.Disable();
     }
 }

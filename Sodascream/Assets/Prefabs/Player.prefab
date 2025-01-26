@@ -176,7 +176,7 @@ CapsuleCollider:
   m_Radius: 0.1
   m_Height: 0.1
   m_Direction: 2
-  m_Center: {x: 0.000000059604645, y: 0.94, z: 0}
+  m_Center: {x: 0.000000059604645, y: 0.3, z: 0}
 --- !u!54 &171443760321197732
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -552,7 +552,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 58dd7cab1174a444090fe1207ed87d0c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.1511
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 58dd7cab1174a444090fe1207ed87d0c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -564,7 +564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 58dd7cab1174a444090fe1207ed87d0c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.18
+      value: -6.14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 58dd7cab1174a444090fe1207ed87d0c, type: 3}
       propertyPath: m_LocalRotation.w
