@@ -1,9 +1,6 @@
-using System;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IStoppableElement
 {
     private IInputReader _inputReader;
     private IGyroInputReader _gyroInput;
@@ -14,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector2 BoundsMax = new Vector2(70, 36);
 
     private float _turnDirection;
+    private bool _stopped = true;
 
     private void Start()
     {
@@ -29,10 +27,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (_stopped)
+        {
+            return;
+        }
         if (_useGyroInput)
         {
             _turnDirection = _gyroInput.GetGyroTurnDirection();
         }
+
+        Debug.Log("PlayerMovement Update");
         HandleMove();
         HandleRotate();
     }
@@ -56,10 +60,16 @@ public class PlayerMovement : MonoBehaviour
         _turnDirection = inputValue;
     }
 
-    public float GetCurrentYRotation()
+    internal bool IsUsingGyroInput() => _useGyroInput;
+
+    public void StopAction()
     {
-        return transform.rotation.eulerAngles.y;
+        _stopped = true;
     }
 
-    internal bool IsUsingGyroInput() => _useGyroInput;
+    public void StartAction()
+    {
+        Debug.Log("PlayerMovement started");
+        _stopped = false;
+    }
 }

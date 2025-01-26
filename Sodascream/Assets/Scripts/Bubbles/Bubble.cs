@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bubble : MonoBehaviour
+public class Bubble : MonoBehaviour, IStoppableElement
 {
     private BubbleType _bubbleType;
     bool _isInitialized = false;
@@ -17,6 +17,7 @@ public class Bubble : MonoBehaviour
     [SerializeField] private SpriteRenderer _faceRenderer;
     [SerializeField] private SpriteRenderer _shineRenderer;
     [SerializeField] private SpriteRenderer _accessoryRenderer;
+    private bool _stopped = false;
 
     private static bool _resourcesLoaded = false;
     private const string _faceResourcesPath = "BubbleFaces";
@@ -62,7 +63,7 @@ public class Bubble : MonoBehaviour
 
     private void LoadResources()
     {
-        if(_resourcesLoaded) return;
+        if (_resourcesLoaded) return;
 
         _faceSprites = Resources.LoadAll<Sprite>(_faceResourcesPath);
         _accessorySprites = Resources.LoadAll<Sprite>(_accessoryResourcesPath);
@@ -79,14 +80,14 @@ public class Bubble : MonoBehaviour
         _faceRenderer.sprite = _faceSprites[UnityEngine.Random.Range(0, _faceSprites.Length)];
         _accessoryRenderer.sprite = _accessorySprites[UnityEngine.Random.Range(0, _accessorySprites.Length)];
 
-        if(spawnBubbleType == BubbleType.Default)
+        if (spawnBubbleType == BubbleType.Default)
             RandomizeColor();
     }
 
     private void RandomizeColor()
     {
         var color = Random.ColorHSV(
-            0f, 1f, 
+            0f, 1f,
             0.15f, 0.3f,
             0.7f, 1f);
         _baseRenderer.color = color;
@@ -95,6 +96,11 @@ public class Bubble : MonoBehaviour
 
     private void Update()
     {
+        if (_stopped)
+        {
+            return;
+        }
+
         if (_isInitialized)
         {
             var targetPosition = transform.position + _direction * _speed * Time.deltaTime;
@@ -108,4 +114,14 @@ public class Bubble : MonoBehaviour
     }
 
     internal BubbleType GetBubbleType() => _bubbleType;
+
+    public void StopAction()
+    {
+        _stopped = true;
+    }
+
+    public void StartAction()
+    {
+        _stopped = false;
+    }
 }

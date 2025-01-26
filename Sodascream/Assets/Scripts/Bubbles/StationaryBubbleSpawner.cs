@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StationaryBubbleSpawner : MonoBehaviour
+public class StationaryBubbleSpawner : MonoBehaviour, IStoppableElement
 {
 
     [SerializeField] private BubbleConfigScriptableObject _bubbleConfigProvider;
@@ -14,16 +14,17 @@ public class StationaryBubbleSpawner : MonoBehaviour
     [SerializeField] private float _maximumSpawnDistanceFromOrigin;
 
     private float _currentSpawnInterval;
+    private bool _started;
 
     private void Start()
     {
         _currentSpawnInterval = _spawnIntervalAtStartInSeconds;
-        StartCoroutine(SpawnBubbleCoroutine());
+
     }
 
     private IEnumerator SpawnBubbleCoroutine()
     {
-        while (true)
+        while (_started)
         {
             SpawnRandomBubble();
             yield return new WaitForSeconds(_currentSpawnInterval);
@@ -42,7 +43,7 @@ public class StationaryBubbleSpawner : MonoBehaviour
             UnityEngine.Random.Range(-_maximumSpawnDistanceFromOrigin, _maximumSpawnDistanceFromOrigin)
         );
 
-        Bubble bubble = Instantiate<Bubble>(_bubbleConfigProvider.GetBubbleConfig(spawnBubbleType).Prefab, this.transform.position + randomPosition, Quaternion.identity);
+        Bubble bubble = Instantiate<Bubble>(_bubbleConfigProvider.GetBubbleConfig(spawnBubbleType).Prefab, this.transform.position + randomPosition, Quaternion.identity, this.transform);
         var randomSizeMultiplier = UnityEngine.Random.Range(bubbleConfig.SizeMultiplier - bubbleConfig.SizeRandomVariance, bubbleConfig.SizeMultiplier);
         Vector3 randomDirection = new Vector3(UnityEngine.Random.Range(-1f, 1f), 0f, UnityEngine.Random.Range(-1f, 1f)).normalized;
 
@@ -61,5 +62,17 @@ public class StationaryBubbleSpawner : MonoBehaviour
     private void Update()
     {
         _currentSpawnInterval = Mathf.Lerp(_spawnIntervalAtStartInSeconds, _spawnIntervalMinimumInSeconds, Time.time / _timeToReachMinimumSpawnIntervalInSeconds);
+    }
+
+    public void StartAction()
+    {
+        Debug.Log("StartAction called in stationary spawner");
+        _started = true;
+        StartCoroutine(SpawnBubbleCoroutine());
+    }
+
+    public void StopAction()
+    {
+        _started = false;
     }
 }
