@@ -329,6 +329,7 @@ MonoBehaviour:
   _bubbleBurster: {fileID: 2438018242232686457}
   _dtoScore: {fileID: 11400000, guid: f1aebea6e0ac1d74890e27a5cdebbc9a, type: 2}
   _dtoHealth: {fileID: 11400000, guid: 096f7ec64bcfbae42b2529172375d29b, type: 2}
+  _dtoGameOver: {fileID: 11400000, guid: 3c2f7ba4e77d25449af32a6a1a0d7ae3, type: 2}
 --- !u!136 &5893385251466138771
 CapsuleCollider:
   m_ObjectHideFlags: 0

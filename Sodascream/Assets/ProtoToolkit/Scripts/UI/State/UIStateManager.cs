@@ -9,10 +9,10 @@ namespace ProtoToolkit.Scripts.UI.State
         [SerializeField] private UIStateDefinition _startState;
         [SerializeField] private RectTransform _root;
         [SerializeField] private RectTransform _popups;
-        [SerializeField] private UIState[] _precachedStates = new UIState[] {};
+        [SerializeField] private UIState[] _precachedStates = new UIState[] { };
         private Stack<UIStateTransition> _history = new Stack<UIStateTransition>();
         private UIStateTransition _currentTransition;
-        
+
         private readonly Dictionary<UIStateDefinition, UIState> _states = new Dictionary<UIStateDefinition, UIState>();
         public UIState CurrentState { get; private set; }
 
@@ -21,11 +21,11 @@ namespace ProtoToolkit.Scripts.UI.State
             _precachedStates = GetComponentsInChildren<UIState>();
             _root = GetComponent<RectTransform>();
         }
-        
+
         public void Awake()
         {
             _communicator.SetManager(this);
-            
+
             foreach (var state in _precachedStates)
             {
                 state.gameObject.SetActive(false);
@@ -37,11 +37,12 @@ namespace ProtoToolkit.Scripts.UI.State
                 _states.Add(state.Definition, state);
             }
             if (_startState == null) return;
-            TransitionToState(new UIStateTransition(){ Definition = _startState });
+            TransitionToState(new UIStateTransition() { Definition = _startState });
         }
 
         private void TransitionToState(UIStateTransition transition)
         {
+            Debug.Log($"Transitioning to state: {transition.Definition}");
             if (_states.TryGetValue(transition.Definition, out var state) && CurrentState == state)
             {
                 return;
@@ -52,7 +53,7 @@ namespace ProtoToolkit.Scripts.UI.State
             {
                 CurrentState.ExitState();
             }
-            
+
             if (nextStateIsPopup)
                 EnterPopupState(state, transition);
             else
@@ -78,7 +79,7 @@ namespace ProtoToolkit.Scripts.UI.State
         {
             CurrentState = state;
         }
-        
+
         public void CallStateTransition(UIStateTransition transition)
         {
             if (transition.ResetHistory)

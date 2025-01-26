@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private BubbleBurster _bubbleBurster;
     [SerializeField] private DtoInt _dtoScore;
     [SerializeField] private DtoInt _dtoHealth;
+    [SerializeField] private DtoInt _dtoGameOver;
 
     private int _MaxHealth = 3;
     private int _currentHealth;
@@ -33,8 +34,11 @@ public class Player : MonoBehaviour
             _currentHealth = _MaxHealth;
         }
 
-
         _dtoHealth.OnValueChanged?.Invoke(_currentHealth);
+        if (_currentHealth <= 0)
+        {
+            _dtoGameOver.OnValueChanged?.Invoke(_score);
+        }
     }
 
     private void OnCollisionEnter(Collision other)
