@@ -16,7 +16,7 @@ MonoBehaviour:
   BubbleLifeTimeInSeconds: 10
   BubbleConfigs:
   - BubbleType: 0
-    BubblePrefab: {fileID: 67466218490067987, guid: 4a28351f19dcdc24a840b64e3bd8af04, type: 3}
+    Prefab: {fileID: 67466218490067987, guid: 4a28351f19dcdc24a840b64e3bd8af04, type: 3}
     ScoreValue: 1
     BubbleLifeIncrease: 0
     BubbleLifeDecrease: -1
@@ -25,11 +25,20 @@ MonoBehaviour:
     SizeMultiplier: 2
     SizeRandomVariance: 0.5
   - BubbleType: 1
-    BubblePrefab: {fileID: 67466218490067987, guid: 4a64c423effe2314abbb0723a5cf5ab2, type: 3}
+    Prefab: {fileID: 67466218490067987, guid: 4a28351f19dcdc24a840b64e3bd8af04, type: 3}
     ScoreValue: -1
     BubbleLifeIncrease: 0
     BubbleLifeDecrease: -1
     SpeedMultiplier: 2
+    SpeedRandomVariance: 0.5
+    SizeMultiplier: 2
+    SizeRandomVariance: 0.5
+  - BubbleType: 2
+    Prefab: {fileID: 787857218656315782, guid: bbc5892d4fb648b4faf7e89bef12f485, type: 3}
+    ScoreValue: -1
+    BubbleLifeIncrease: 1
+    BubbleLifeDecrease: 0
+    SpeedMultiplier: 0.5
     SpeedRandomVariance: 0.5
     SizeMultiplier: 2
     SizeRandomVariance: 0.5
