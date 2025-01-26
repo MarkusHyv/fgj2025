@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BubbleSpawner : MonoBehaviour
+public class BubbleSpawner : MonoBehaviour, IStoppableElement
 {
     [SerializeField] private BubbleConfigScriptableObject _bubbleConfigProvider;
     [SerializeField] private float _spawnInterval;
@@ -11,15 +11,15 @@ public class BubbleSpawner : MonoBehaviour
     [SerializeField] private float _minimumSpawnDistanceFromPlayer;
     [SerializeField] private List<BubbleType> _spawnsBubbleTypes;
     private Player _player;
+    private bool _started;
     private void Start()
     {
         _player = FindFirstObjectByType<Player>();
-        StartCoroutine(SpawnBubbleCoroutine());
     }
 
     private IEnumerator SpawnBubbleCoroutine()
     {
-        while (true)
+        while (_started)
         {
             SpawnRandomBubble();
             yield return new WaitForSeconds(_spawnInterval);
@@ -38,7 +38,7 @@ public class BubbleSpawner : MonoBehaviour
         BubbleType spawnBubbleType = _spawnsBubbleTypes[spawnBubbleTypeIndex];
 
         var bubbleConfig = _bubbleConfigProvider.GetBubbleConfig(spawnBubbleType);
-        Bubble bubble = Instantiate<Bubble>(_bubbleConfigProvider.GetBubbleConfig(spawnBubbleType).Prefab, randomPositionFromPlayer, Quaternion.identity);
+        Bubble bubble = Instantiate<Bubble>(_bubbleConfigProvider.GetBubbleConfig(spawnBubbleType).Prefab, randomPositionFromPlayer, Quaternion.identity, this.transform);
         var randomSizeMultiplier = UnityEngine.Random.Range(bubbleConfig.SizeMultiplier - bubbleConfig.SizeRandomVariance, bubbleConfig.SizeMultiplier);
         Vector3 randomDirection = new Vector3(UnityEngine.Random.Range(-1f, 1f), 0f, UnityEngine.Random.Range(-1f, 1f)).normalized;
 
@@ -53,5 +53,16 @@ public class BubbleSpawner : MonoBehaviour
             lifeDecreaseOnHit: bubbleConfig.BubbleLifeDecrease
             );
 
+    }
+
+    public void StartAction()
+    {
+        _started = true;
+        StartCoroutine(SpawnBubbleCoroutine());
+    }
+
+    public void StopAction()
+    {
+        _started = false;
     }
 }
