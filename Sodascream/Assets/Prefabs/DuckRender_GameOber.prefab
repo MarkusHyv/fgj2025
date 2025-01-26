@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 6542188801507300313}
   - component: {fileID: 6647279848503787667}
   - component: {fileID: 6882370811190216690}
+  - component: {fileID: 5771439306408121705}
   m_Layer: 8
   m_Name: DuckHolder
   m_TagString: Untagged
@@ -230,6 +231,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScaleModifier: 1.25
+--- !u!114 &5771439306408121705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078687152361223673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077607067e2c9f847a47d87c7cc32bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ducks:
+  - {fileID: 22100000, guid: 047807c6442674048bf6dd963d00712f, type: 2}
+  _animator: {fileID: 1067368938184597551}
+  previousTime: 0
 --- !u!1001 &6453377663943541545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -439,6 +456,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e517a837aa7a15945bb2532348bb6b0e, type: 3}
+--- !u!95 &1067368938184597551 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6295766952494031622, guid: e517a837aa7a15945bb2532348bb6b0e, type: 3}
+  m_PrefabInstance: {fileID: 6453377663943541545}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6354617215168985685 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 125857227833686396, guid: e517a837aa7a15945bb2532348bb6b0e, type: 3}
