@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BubbleConfig
   m_EditorClassIdentifier: 
   BaseBubblePrefab: {fileID: 67466218490067987, guid: 4a28351f19dcdc24a840b64e3bd8af04, type: 3}
+  HealthBubblePrefab: {fileID: 787857218656315782, guid: bbc5892d4fb648b4faf7e89bef12f485, type: 3}
   BaseBubbleSpeed: 0.5
   BubbleLifeTimeInSeconds: 10
   BubbleConfigs:

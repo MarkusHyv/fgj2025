@@ -38,7 +38,8 @@ public class BubbleSpawner : MonoBehaviour
         BubbleType spawnBubbleType = _spawnsBubbleTypes[spawnBubbleTypeIndex];
 
         var bubbleConfig = _bubbleConfigProvider.GetBubbleConfig(spawnBubbleType);
-        Bubble bubble = Instantiate<Bubble>(_bubbleConfigProvider.BaseBubblePrefab, randomPositionFromPlayer, Quaternion.identity);
+        var bubblePrefab = spawnBubbleType == BubbleType.PlusHealthBubble ? _bubbleConfigProvider.HealthBubblePrefab : _bubbleConfigProvider.BaseBubblePrefab;
+        Bubble bubble = Instantiate<Bubble>(bubblePrefab, randomPositionFromPlayer, Quaternion.identity);
         var randomSizeMultiplier = UnityEngine.Random.Range(bubbleConfig.SizeMultiplier - bubbleConfig.SizeRandomVariance, bubbleConfig.SizeMultiplier);
         Vector3 randomDirection = new Vector3(UnityEngine.Random.Range(-1f, 1f), 0f, UnityEngine.Random.Range(-1f, 1f)).normalized;
 

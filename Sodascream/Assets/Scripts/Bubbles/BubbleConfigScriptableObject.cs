@@ -24,6 +24,7 @@ public class BubbleConfig
 public class BubbleConfigScriptableObject : ScriptableObject, IBubbleConfigProvider
 {
     public Bubble BaseBubblePrefab;
+    public Bubble HealthBubblePrefab;
     public float BaseBubbleSpeed;
     public float BubbleLifeTimeInSeconds;
     public BubbleConfig[] BubbleConfigs;
