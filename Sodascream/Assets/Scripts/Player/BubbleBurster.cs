@@ -9,7 +9,7 @@ public class BubbleBurster : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent(out Bubble bubble))
         {
-            OnBubbleBurst?.Invoke(bubble.BubbleType, bubble.GetScoreIncrease(), bubble.GetLifeIncrease());
+            OnBubbleBurst?.Invoke(bubble.GetBubbleType(), bubble.GetScoreIncrease(), bubble.GetLifeIncrease());
             Destroy(other.gameObject);
         }
     }

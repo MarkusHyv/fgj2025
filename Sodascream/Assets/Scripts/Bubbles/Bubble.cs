@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
-    public BubbleType BubbleType;
+    private BubbleType _bubbleType;
     bool _isInitialized = false;
     private float _speed;
     private Vector3 _direction;
@@ -12,6 +12,9 @@ public class Bubble : MonoBehaviour
     private float _lifeTimeMax;
     private int _lifeIncreaseOnBurst;
     private int _lifeDecreaseOnHit;
+    [SerializeField] private BubbleVisualsScriptableObject _bubbleVisualsProvider;
+    [SerializeField] private MeshRenderer _faceRenderer;
+    [SerializeField] private MeshRenderer _baseRenderer;
 
     internal int GetLifeIncrease()
     {
@@ -31,10 +34,11 @@ public class Bubble : MonoBehaviour
     internal void Initialize(BubbleType spawnBubbleType, float speed, float sizeMultiplier, Vector3 randomDirection, int scoreIncrease, float bubbleLifeTimeInSeconds, int lifeIncreaseOnBurst, int lifeDecreaseOnHit)
     {
         transform.localScale = new Vector3(
-     transform.localScale.x * sizeMultiplier,
-     transform.localScale.y * sizeMultiplier,
-     transform.localScale.z * sizeMultiplier
-     );
+            transform.localScale.x * sizeMultiplier,
+            transform.localScale.y * sizeMultiplier,
+            transform.localScale.z * sizeMultiplier
+        );
+        _bubbleType = spawnBubbleType;
         _speed = speed;
         _isInitialized = true;
         _direction = randomDirection;
@@ -42,6 +46,22 @@ public class Bubble : MonoBehaviour
         _lifeTimeMax = bubbleLifeTimeInSeconds;
         _lifeIncreaseOnBurst = lifeIncreaseOnBurst;
         _lifeDecreaseOnHit = lifeDecreaseOnHit;
+        SetVisuals(spawnBubbleType);
+    }
+
+    private void SetVisuals(BubbleType spawnBubbleType)
+    {
+        var tempFaceMaterial = new Material(_faceRenderer.material);
+        var tempBaseMaterial = new Material(_bubbleVisualsProvider.GetBubbleVisuals(spawnBubbleType).BaseMaterialForType);
+        var visualsConfig = _bubbleVisualsProvider.GetBubbleVisuals(spawnBubbleType);
+        var faceSprite = visualsConfig.FaceSprites[UnityEngine.Random.Range(0, visualsConfig.FaceSprites.Length)];
+        var baseSprite = visualsConfig.BaseSprites[UnityEngine.Random.Range(0, visualsConfig.BaseSprites.Length)];
+        //        var accessorySprite = visualsConfig.AccessorySprites[UnityEngine.Random.Range(0, visualsConfig.AccessorySprites.Length)];
+        tempFaceMaterial.mainTexture = faceSprite.texture;
+        tempBaseMaterial.mainTexture = baseSprite.texture;
+        _faceRenderer.material = tempFaceMaterial;
+        _baseRenderer.material = tempBaseMaterial;
+        //TODO use accessory sprite too
     }
 
     private void Update()
@@ -57,4 +77,6 @@ public class Bubble : MonoBehaviour
             }
         }
     }
+
+    internal BubbleType GetBubbleType() => _bubbleType;
 }

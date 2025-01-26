@@ -10,6 +10,12 @@ namespace ProtoToolkit.Scripts.DTO
         public T GetCurrentValue() => _currentValue;
         [HideInInspector]
         public UnityEvent<T> OnValueChanged = new UnityEvent<T>();
+        
+        public void CallValueChanged(T value)
+        {
+            _currentValue = value;
+            OnValueChanged.Invoke(_currentValue);
+        }
 
         public void BindProperty(ref T property, UnityAction<T> onValueChangedEvent)
         {
