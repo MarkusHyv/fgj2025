@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bubble_Health Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4819676666173120407, guid: 4a28351f19dcdc24a840b64e3bd8af04, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd6e02784862007468b052e1c584771c, type: 3}
     - target: {fileID: 4884567802311682662, guid: 4a28351f19dcdc24a840b64e3bd8af04, type: 3}
       propertyPath: m_IsActive
       value: 0
