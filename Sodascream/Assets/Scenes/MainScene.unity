@@ -1177,6 +1177,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3884667191413368887, guid: e1811202dc9ae554983857eed28f9332, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -110
+      objectReference: {fileID: 0}
     - target: {fileID: 3937923860364911724, guid: e1811202dc9ae554983857eed28f9332, type: 3}
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.size
       value: 0
