@@ -79,15 +79,8 @@ public class Bubble : MonoBehaviour
         _faceRenderer.sprite = _faceSprites[UnityEngine.Random.Range(0, _faceSprites.Length)];
         _accessoryRenderer.sprite = _accessorySprites[UnityEngine.Random.Range(0, _accessorySprites.Length)];
 
-        RandomizeColor();
-
-        if (spawnBubbleType == BubbleType.EvilBubble)
-            SetEvilVisuals();
-    }
-
-    private void SetEvilVisuals()
-    {
-        _baseRenderer.sprite = _bubbleVisualsProvider.GetBubbleVisuals(BubbleType.EvilBubble).BaseSprites[0];
+        if(spawnBubbleType == BubbleType.Default)
+            RandomizeColor();
     }
 
     private void RandomizeColor()
