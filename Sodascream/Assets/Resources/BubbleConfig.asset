@@ -13,19 +13,10 @@ MonoBehaviour:
   m_Name: BubbleConfig
   m_EditorClassIdentifier: 
   BaseBubbleSpeed: 0.5
-  BubbleLifeTimeInSeconds: 30
+  BubbleLifeTimeInSeconds: 20
   BubbleConfigs:
   - BubbleType: 0
     Prefab: {fileID: 67466218490067987, guid: 4a28351f19dcdc24a840b64e3bd8af04, type: 3}
-    ScoreValue: -5
-    BubbleLifeIncrease: 0
-    BubbleLifeDecrease: -1
-    SpeedMultiplier: 4
-    SpeedRandomVariance: 2
-    SizeMultiplier: 3
-    SizeRandomVariance: 1
-  - BubbleType: 1
-    Prefab: {fileID: 5912193146416330558, guid: c29134c4b33572548b3e0995d11cdf01, type: 3}
     ScoreValue: 10
     BubbleLifeIncrease: 0
     BubbleLifeDecrease: -1
@@ -33,6 +24,15 @@ MonoBehaviour:
     SpeedRandomVariance: 0.5
     SizeMultiplier: 2
     SizeRandomVariance: 0.5
+  - BubbleType: 1
+    Prefab: {fileID: 5912193146416330558, guid: c29134c4b33572548b3e0995d11cdf01, type: 3}
+    ScoreValue: -5
+    BubbleLifeIncrease: 0
+    BubbleLifeDecrease: -1
+    SpeedMultiplier: 4
+    SpeedRandomVariance: 2
+    SizeMultiplier: 3
+    SizeRandomVariance: 1
   - BubbleType: 2
     Prefab: {fileID: 787857218656315782, guid: bbc5892d4fb648b4faf7e89bef12f485, type: 3}
     ScoreValue: 5
