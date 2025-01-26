@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6920859552336088727}
   - component: {fileID: 8301169296046612588}
   - component: {fileID: 4801270380902885219}
+  - component: {fileID: 2236157489677025443}
   - component: {fileID: 505237237520164845}
   m_Layer: 0
   m_Name: Button
@@ -121,7 +122,44 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8301169296046612588}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2236157489677025443}
+        m_TargetAssemblyTypeName: ProtoToolkit.Scripts.Audio.SfxComponent, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2236157489677025443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3586121540862658593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e40c87383810a644a047a65027ef73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _autoPlay: 0
+  clips:
+  - {fileID: 8300000, guid: a1bac9dba36943a448d10d7c774215f3, type: 3}
+  - {fileID: 8300000, guid: bdceb263db21036499bc94786d3da480, type: 3}
+  - {fileID: 8300000, guid: 0771867d13a6d854a8ec0e725c6101ba, type: 3}
+  - {fileID: 8300000, guid: dcf5d972cd1518c418326185b3a71af2, type: 3}
+  - {fileID: 8300000, guid: cf955cf3c789665478c0ddb377d5d1b2, type: 3}
+  - {fileID: 8300000, guid: d5395de23b8d0a34cb5dfc6ab493b277, type: 3}
+  - {fileID: 8300000, guid: d9380732595c52943ac456c5f2016f56, type: 3}
+  - {fileID: 8300000, guid: 7db99aaeafc1deb4c84fad3630127d61, type: 3}
+  - {fileID: 8300000, guid: 4b40514d988c50443a44784d209afaed, type: 3}
+  _minPitch: 0.8
+  _maxPitch: 1.2
 --- !u!114 &505237237520164845
 MonoBehaviour:
   m_ObjectHideFlags: 0
