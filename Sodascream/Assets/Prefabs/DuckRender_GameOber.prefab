@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2995103572230954437}
   m_Layer: 0
-  m_Name: DuckRender
+  m_Name: DuckRender_GameOber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,7 +180,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6542188801507300313}
   - component: {fileID: 6647279848503787667}
-  - component: {fileID: 347876772832590165}
   - component: {fileID: 6882370811190216690}
   m_Layer: 8
   m_Name: DuckHolder
@@ -218,43 +217,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScaleModifier: 1.25
---- !u!114 &347876772832590165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078687152361223673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 077607067e2c9f847a47d87c7cc32bb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ducks:
-  - {fileID: 22100000, guid: b43346eb273650a41a5ab742a796caf3, type: 2}
-  - {fileID: 22100000, guid: e593f30a71857ef4bbc4549e2f3dedda, type: 2}
-  - {fileID: 22100000, guid: 8886a91da3e27f04e9c1712e69b57a58, type: 2}
-  - {fileID: 22100000, guid: 5b0c2f96670db934b94642d1ec93be38, type: 2}
-  - {fileID: 22100000, guid: b0eda187579d8164489e14762e08aacc, type: 2}
-  - {fileID: 22100000, guid: 5171320929d68b94eb56fc51e8a08c05, type: 2}
-  - {fileID: 22100000, guid: ad7d21755ace3eb4e92c41518862efc6, type: 2}
-  - {fileID: 22100000, guid: e8a8f931d833c7246ae9642edf19f495, type: 2}
-  - {fileID: 22100000, guid: 089ae3305bd2e2c428e5074a8055f51c, type: 2}
-  - {fileID: 22100000, guid: 4e61cc3c1b5255f4086e2e76c33b96ee, type: 2}
-  - {fileID: 22100000, guid: 4deff2e66988a1f4fa94b4ebc86b6d11, type: 2}
-  - {fileID: 22100000, guid: 330eb6aba5923bb458cac59c30cedb50, type: 2}
-  - {fileID: 22100000, guid: 898415ec94fa43343a1f41095d2e0ec6, type: 2}
-  - {fileID: 22100000, guid: 2c414e940e12b9f45ae876251e899c2f, type: 2}
-  - {fileID: 22100000, guid: df53c56d28aba184ca6035a5545f3d0a, type: 2}
-  - {fileID: 22100000, guid: fcfebb5e3c1c0c540b164b45525c616e, type: 2}
-  - {fileID: 22100000, guid: 1800906b5197a6b49b4a0c65ca4d9779, type: 2}
-  - {fileID: 22100000, guid: 624de4542ab824b41a56f7198eeef58a, type: 2}
-  - {fileID: 22100000, guid: cea597a0b7cd84c47bb2a543d1ccba69, type: 2}
-  - {fileID: 22100000, guid: 562cf9e7aa0b01c48b502135472408e9, type: 2}
-  - {fileID: 22100000, guid: 62e9df352eef7844d892e71c061ad372, type: 2}
-  - {fileID: 22100000, guid: e2861c7c7e7d4934cbf543893b9da86f, type: 2}
-  _animator: {fileID: 1067368938184597551}
-  previousTime: 0
 --- !u!114 &6882370811190216690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +387,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6295766952494031622, guid: e517a837aa7a15945bb2532348bb6b0e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 047807c6442674048bf6dd963d00712f, type: 2}
+    - target: {fileID: 6295766952494031622, guid: e517a837aa7a15945bb2532348bb6b0e, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
@@ -473,11 +439,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e517a837aa7a15945bb2532348bb6b0e, type: 3}
---- !u!95 &1067368938184597551 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6295766952494031622, guid: e517a837aa7a15945bb2532348bb6b0e, type: 3}
-  m_PrefabInstance: {fileID: 6453377663943541545}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6354617215168985685 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 125857227833686396, guid: e517a837aa7a15945bb2532348bb6b0e, type: 3}
