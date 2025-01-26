@@ -33,8 +33,10 @@ public class BubbleSpawner : MonoBehaviour
             _player.transform.position.y,
             _player.transform.position.z + UnityEngine.Random.Range(_minimumSpawnDistanceFromPlayer, _maximumSpawnDistanceFromPlayer)
         );
+
         int spawnBubbleTypeIndex = UnityEngine.Random.Range(0, _spawnsBubbleTypes.Count);
         BubbleType spawnBubbleType = _spawnsBubbleTypes[spawnBubbleTypeIndex];
+
         var bubbleConfig = _bubbleConfigProvider.GetBubbleConfig(spawnBubbleType);
         Bubble bubble = Instantiate<Bubble>(_bubbleConfigProvider.BaseBubblePrefab, randomPositionFromPlayer, Quaternion.identity);
         var randomSizeMultiplier = UnityEngine.Random.Range(bubbleConfig.SizeMultiplier - bubbleConfig.SizeRandomVariance, bubbleConfig.SizeMultiplier);

@@ -22,7 +22,6 @@ public interface IBubbleVisualsProvider
 public struct BubbleVisuals
 {
     public BubbleType BubbleType;
-    public Material BaseMaterialForType;
     public Sprite[] FaceSprites;
     public Sprite[] BaseSprites;
     public Sprite[] AccessorySprites;
