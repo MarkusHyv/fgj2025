@@ -87,9 +87,9 @@ public class Bubble : MonoBehaviour, IStoppableElement
     private void RandomizeColor()
     {
         var color = Random.ColorHSV(
-            0f, 1f,
-            0.15f, 0.3f,
-            0.7f, 1f);
+            0.15f, 0.7f, 
+            0.3f, 0.45f,
+            1f, 1f);
         _baseRenderer.color = color;
         _shineRenderer.color = new(color.r, color.g, color.b, _shineRenderer.color.a);
     }
