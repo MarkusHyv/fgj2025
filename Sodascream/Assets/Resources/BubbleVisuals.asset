@@ -14,17 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bubbleVisuals:
   - BubbleType: 0
-    BaseMaterialForType: {fileID: 2100000, guid: 4072a96005465754c906ffea4752f607, type: 2}
-    FaceSprites:
-    - {fileID: 21300000, guid: f73aaeddab697a340916a9534e751317, type: 3}
-    - {fileID: 21300000, guid: dd7ce5348d93ac7489d0a56cfbbb4a21, type: 3}
+    FaceSprites: []
     BaseSprites:
-    - {fileID: 21300000, guid: dce2e59d1facdbf4390e387d0bc62a66, type: 3}
-    - {fileID: 21300000, guid: dce2e59d1facdbf4390e387d0bc62a66, type: 3}
     - {fileID: 21300000, guid: dce2e59d1facdbf4390e387d0bc62a66, type: 3}
     AccessorySprites: []
   - BubbleType: 1
-    BaseMaterialForType: {fileID: 2100000, guid: 02990da79ad60e24e8f68bb11371950d, type: 2}
     FaceSprites:
     - {fileID: 21300000, guid: 9a78e8392e52e974386117b9b7ee8ca1, type: 3}
     - {fileID: 21300000, guid: 286adc4dd56e3394e8da15d50c485ea9, type: 3}
@@ -32,7 +26,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: dce2e59d1facdbf4390e387d0bc62a66, type: 3}
     AccessorySprites: []
   - BubbleType: 2
-    BaseMaterialForType: {fileID: 0}
     FaceSprites: []
     BaseSprites: []
     AccessorySprites: []
