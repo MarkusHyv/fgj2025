@@ -17,7 +17,7 @@ public class GameOverManager : MonoBehaviour
 
     private void OnGameOver(int arg0)
     {
-        _gameOverPopup.Initialize(_gameOverDto.GetCurrentValue());
+        _gameOverPopup.Initialize(arg0);
         _gameOverPopup.RequestTransitionFromHudState(_gameOverState.Definition);
     }
 

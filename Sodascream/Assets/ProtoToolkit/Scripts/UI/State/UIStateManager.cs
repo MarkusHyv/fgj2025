@@ -42,7 +42,6 @@ namespace ProtoToolkit.Scripts.UI.State
 
         private void TransitionToState(UIStateTransition transition)
         {
-            Debug.Log($"Transitioning to state: {transition.Definition}");
             if (_states.TryGetValue(transition.Definition, out var state) && CurrentState == state)
             {
                 return;
