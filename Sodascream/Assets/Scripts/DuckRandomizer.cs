@@ -10,6 +10,8 @@ public class DuckRandomizer : MonoBehaviour
     [SerializeField]
     private Animator _animator;
 
+    [SerializeField] private bool _resetPositionAfterAnimEnds = true;
+
     public void OnValidate()
     {
         _animator = GetComponentInChildren<Animator>();
@@ -24,11 +26,13 @@ public class DuckRandomizer : MonoBehaviour
     private float previousTime;
     public void LateUpdate()
     {
+        if (!_resetPositionAfterAnimEnds) return;
         var state = _animator.GetCurrentAnimatorStateInfo(0);
         var normalizedTime = Mathf.Repeat(state.normalizedTime, 1);
         if (previousTime > normalizedTime)
         {
             _animator.gameObject.transform.localPosition = Vector3.zero;
+            _animator.gameObject.transform.localRotation = Quaternion.identity;
         }
         previousTime = normalizedTime;
     }
