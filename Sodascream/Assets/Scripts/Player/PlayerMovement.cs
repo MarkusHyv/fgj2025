@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 1f;
     [SerializeField] private float _speed = 5f;
     private bool _useGyroInput;
+    [SerializeField] private Vector2 BoundsMin = new Vector2(-70, -36);
+    [SerializeField] private Vector2 BoundsMax = new Vector2(70, 36);
 
     private float _turnDirection;
 
@@ -37,7 +39,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMove()
     {
-        transform.position += transform.forward * _speed * Time.deltaTime;
+        var targetPos = transform.position + transform.forward * _speed * Time.deltaTime;
+        targetPos.x = Mathf.Clamp(targetPos.x, BoundsMin.x, BoundsMax.x);
+        targetPos.z = Mathf.Clamp(targetPos.z, BoundsMin.y, BoundsMax.y);
+        transform.position = targetPos;
     }
 
     private void HandleRotate()
