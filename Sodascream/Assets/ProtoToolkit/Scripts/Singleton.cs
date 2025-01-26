@@ -20,5 +20,18 @@ namespace ProtoToolkit.Scripts
             }
             private set { _instance = value; }
         }
+
+        public void Awake()
+        {
+            if (_instance == null)
+            {
+                _instance = this as T;
+                DontDestroyOnLoad(this.gameObject);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+        }
     }
 }
